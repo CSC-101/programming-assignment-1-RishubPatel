@@ -6,6 +6,8 @@ import unittest
 # Write your test cases for each part below.
 
 class TestCases(unittest.TestCase):
+    pass
+
     # Part 1
 
 
@@ -28,10 +30,6 @@ class TestCases(unittest.TestCase):
 
 
     # Part 8
-
-
-
-
 
 if __name__ == '__main__':
     unittest.main()
