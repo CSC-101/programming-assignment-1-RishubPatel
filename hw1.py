@@ -5,7 +5,11 @@ import data
 # Part 1
 
 def vowel_count(string:str) -> int: #returns the number of vowels in a given string
-    return sum([string.count(vowel) for vowel in ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]])
+    string = string.lower()
+    return sum([string.count(vowel) for vowel in ["a", "e", "i", "o", "u"]])
+
+def vowel_count_v2(string:str) -> int: #returns the number of vowels in a given string (I made a second version in case you didn't want us to use .count() and sum())
+    return len([1 for letter in string if letter in ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]])
 
 # Part 2
 
@@ -49,6 +53,8 @@ def circle_bound(rect: data.Rectangle) -> data.Circle: #returns the smallest bou
 # Part 8
 
 def below_pay_average(employees: list[data.Employee]) -> list[str]: #returns a list of the employees being paid less than the mean among the employees in the given list
+    if employees == []:
+        return []
     average = sum([employee.pay_rate for employee in employees])/len(employees)
     return [employee.name for employee in employees if employee.pay_rate < average]
     #TEST FOR EMPTY LIST

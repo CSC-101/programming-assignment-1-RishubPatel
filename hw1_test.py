@@ -22,6 +22,18 @@ class TestCases(unittest.TestCase):
         result = hw1.vowel_count(input)
         expected = 4
         self.assertEqual(expected, result)
+    
+    def test_vowel_count_v2(self):
+        input = "Prestidigitation"
+        result = hw1.vowel_count_v2(input)
+        expected = 7
+        self.assertEqual(expected, result)
+
+    def test_vowel_count_v2(self):
+        input = "Apple Pie"
+        result = hw1.vowel_count_v2(input)
+        expected = 4
+        self.assertEqual(expected, result)
 
     # Part 2
 
@@ -108,7 +120,24 @@ class TestCases(unittest.TestCase):
 
     # Part 8
 
+    def test_below_pay_average_1(self):
+        employees = [data.Employee("Kevin", 17), data.Employee("Hannah", 20), data.Employee("CEO", float("inf"))]
+        result = hw1.below_pay_average(employees)
+        expected = ["Kevin", "Hannah"]
+        self.assertEqual(expected, result)
     
+    def test_below_pay_average_2(self):
+        employees = [data.Employee("Child", 0.01), data.Employee("Hannah", 20), data.Employee("Craig", 18)]
+        result = hw1.below_pay_average(employees)
+        expected = ["Child"]
+        self.assertEqual(expected, result)
+
+    def test_below_pay_average_3(self):
+        employees = []
+        result = hw1.below_pay_average(employees)
+        expected = []
+        self.assertEqual(expected, result)
+
 
 if __name__ == '__main__':
     unittest.main()
