@@ -7,7 +7,6 @@ import data_tests
 # Write your test cases for each part below.
 
 class TestCases(unittest.TestCase):
-    pass
 
     # Part 1
     
@@ -37,7 +36,17 @@ class TestCases(unittest.TestCase):
 
     # Part 2
 
-
+    def test_short_lists_1(self):
+        input = [[1, 2, 3], [78, 6], [4, 19, 3, 82], []]
+        result = hw1.short_lists(input)
+        expected = [[78, 6]]
+        self.assertEqual(expected, result)
+    
+    def test_short_lists_2(self):
+        input = []
+        result = hw1.short_lists(input)
+        expected = []
+        self.assertEqual(expected, result)
 
     # Part 3
 
@@ -50,6 +59,18 @@ class TestCases(unittest.TestCase):
     def test_ascending_pairs_2(self):
         input = []
         result = hw1.ascending_pairs(input)
+        expected = []
+        self.assertEqual(expected, result)
+
+    def test_ascending_pairs__v2_1(self):
+        input = [[1, 2, 3], [78, 6], [4, 19, 3, 82], []]
+        result = hw1.ascending_pairs_v2(input)
+        expected = [[1, 2, 3], [6, 78], [4, 19, 3, 82], []]
+        self.assertEqual(expected, result)
+
+    def test_ascending_pairs__v2_2(self):
+        input = []
+        result = hw1.ascending_pairs_v2(input)
         expected = []
         self.assertEqual(expected, result)
 
